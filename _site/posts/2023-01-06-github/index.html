@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="สิวะโชติ ศรีสุทธิยากร">
-<meta name="dcterms.date" content="2023-01-04">
+<meta name="dcterms.date" content="2023-01-06">
 
 <title>DataKruRoo-Blog - What’s GitHub?</title>
 <style>
@@ -135,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 4, 2023</p>
+        <p class="date">January 6, 2023</p>
       </div>
     </div>
     
@@ -158,6 +158,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#github-vs-git" id="toc-github-vs-git" class="nav-link" data-scroll-target="#github-vs-git">GitHub vs Git</a></li>
   </ul></li>
   <li><a href="#repository" id="toc-repository" class="nav-link" data-scroll-target="#repository">Repository</a></li>
+  <li><a href="#การใชงาน-github-รวมกบ-rstudio" id="toc-การใชงาน-github-รวมกบ-rstudio" class="nav-link" data-scroll-target="#การใชงาน-github-รวมกบ-rstudio">การใช้งาน GitHub ร่วมกับ RStudio</a>
+  <ul class="collapse">
+  <li><a href="#สราง-github-repository" id="toc-สราง-github-repository" class="nav-link" data-scroll-target="#สราง-github-repository">1. สร้าง GitHub repository</a></li>
+  <li><a href="#สราง-project-ทเชอมตอกบ-github-ใน-rstudio" id="toc-สราง-project-ทเชอมตอกบ-github-ใน-rstudio" class="nav-link" data-scroll-target="#สราง-project-ทเชอมตอกบ-github-ใน-rstudio">2. สร้าง project ที่เชื่อมต่อกับ GitHub ใน Rstudio</a>
+  <ul class="collapse">
+  <li><a href="#กรณ-1-สราง-project-ใหมตงแตตน" id="toc-กรณ-1-สราง-project-ใหมตงแตตน" class="nav-link" data-scroll-target="#กรณ-1-สราง-project-ใหมตงแตตน">กรณี 1 : สร้าง project ใหม่ตั้งแต่ต้น</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -225,8 +233,24 @@ ul.task-list li input[type="checkbox"] {
 <section id="repository" class="level1">
 <h1>Repository</h1>
 <p>Repository เป็นเหมือน folder สำหรับเก็บไฟล์งานของโปรเจค อย่างไรก็ตาม repository มีความแตกต่างจาก folder บนเครื่องคอมพิวเตอร์ปกติคือ repository ไม่เพียงแต่เก็บไฟล์งานใน version ล่าสุดเท่านั้น แต่จะบันทึกการเปลี่ยนแปลงของไฟล์งานในแต่ละ version ไว้ด้วย ผู้ใช้งาน GitHub จะมี repository ที่อยู่บน cloud ซึ่งจะเรียกว่า remote repository ส่วนผู้ใช้งาน Git จะมี repository ที่อยู่บนเครื่องคอมพิวเตอร์ส่วนตัว ซึ่งจะเรียกว่า local repository</p>
+</section>
+<section id="การใชงาน-github-รวมกบ-rstudio" class="level1">
+<h1>การใช้งาน GitHub ร่วมกับ RStudio</h1>
+<p>การทำงานบน R หลายโปรเจคที่ใช้ระยะเวลาในการดำเนินงาน และหลายโปรเจคอาจจะต้องมีการบริหารจัดการ ปรับปรุงหรือดูแลระหว่างที่โปรเจคนั้นดำเนินงานอยู่ กรณีเช่นนี้อยู่ใช้ R อาจต้องการบันทึกและกำกับติดตามโปรเจคโดยใช้ GitHub เนื้อหาส่วนนี้แสดงการสร้างและเชื่อมต่อ repository บน GitHub กับ R project ที่สร้างบน RStudio รายละเอียดมีดังนี้</p>
+<section id="สราง-github-repository" class="level2">
+<h2 class="anchored" data-anchor-id="สราง-github-repository">1. สร้าง GitHub repository</h2>
+<p>ผู้ใช้จำเป็นต้องมี GitHub account ก่อน จากนั้นคลิกที่ปุ่ม <img src="images/image-577434003.png" class="img-fluid" style="width:10.0%"> เพื่อสร้าง repository ใหม่สำหรับเก็บไฟล์งานใน R project เมื่อสร้างเสร็จแล้วจะได้ repository ดังรูป</p>
+<p><img src="images/image-1511933830.png" class="img-fluid"></p>
+</section>
+<section id="สราง-project-ทเชอมตอกบ-github-ใน-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="สราง-project-ทเชอมตอกบ-github-ใน-rstudio">2. สร้าง project ที่เชื่อมต่อกับ GitHub ใน Rstudio</h2>
+<p>กรณีนี้อาจจำแนกเป็น 2 กรณี กรณีแรกคือสร้าง project ใหม่ตั้งแต่ต้น และกรณีที่สองคือเชื่อมต่อ project เดิมที่มีอยู่ในเครื่องคอมพิวเตอร์แล้ว รายละเอียดมีดังนี้</p>
+<section id="กรณ-1-สราง-project-ใหมตงแตตน" class="level3">
+<h3 class="anchored" data-anchor-id="กรณ-1-สราง-project-ใหมตงแตตน">กรณี 1 : สร้าง project ใหม่ตั้งแต่ต้น</h3>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

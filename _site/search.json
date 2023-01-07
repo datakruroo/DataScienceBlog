@@ -42,6 +42,20 @@
     "text": "GitHub vs Git\nก่อนที่จะกล่าวถึงการใช้งาน GitHub ผู้อ่านควรรู้จัก Git และความเหมือน/แตกต่างระหว่าง GitHub และ Git เสียก่อน รายละเอียดมีดังนี้\n\n\n\n\n\n\n\nGitHub\nGit\n\n\n\n\nเป็น version control software ที่พัฒนาต่อยอดจาก Git และใช้งานจะใช้งานบน cloud จุดนี้ทำให้ GitHub สามารถใช้งานร่วมกันเป็นทีมได้อย่างสะดวก\nเป็น version control software ใช้งานบนเครื่องคอมพิวเตอร์ของผู้ใช้\n\n\nใช้งานผ่าน web application/ desktop application ที่พัฒนาต่อยอดจาก Git กล่าวคือเราไม่สามารถใช้งาน GitHub ได้โดยปราศจาก Git\nผู้ใช้สามารถใช้ git ได้โดยเป็นอิสระจาก GitHub หรือ cloud hosting platform อื่น ๆ\n\n\nการใช้งานมีทั้ง visual menu และ code-based มีการออกแบบการใช้งานที่ง่ายต่อการบริหารจัดการ\nการใช้งานเป็นลักษณะ code-based ซึ่งทำให้เหมาะสำหรับ developer ที่ถนัดการเขียน code แต่สำหรับบุคคลทั่วไปอาจใช้งานได้ยาก\n\n\nเนื่องจาก GitHub เก็บบันทึกไฟล์ version ต่าง ๆ ไว้บน cloud สมาชิกภายในทีมจึงสามารถเข้าถึงไฟล์ดังกล่าวได้โดยง่าย\nเนื่องจาก Git เป็นโปรแกรมที่ติดตั้งบนเครื่องคอมพิวเตอร์ส่วนตัว การแชร์หรือให้สมาชิกคนอื่นเข้าถึงไฟล์ของโปรเจคจึงทำได้ยากกว่า\n\n\n\nรูปต่อไปนี้แสดงตัวอย่าง workflow การทำงานโปรเจคหนึ่งบน GitHub"
   },
   {
+    "objectID": "posts/2023-01-06-github/index.html#สราง-github-repository",
+    "href": "posts/2023-01-06-github/index.html#สราง-github-repository",
+    "title": "What’s GitHub?",
+    "section": "1. สร้าง GitHub repository",
+    "text": "1. สร้าง GitHub repository\nผู้ใช้จำเป็นต้องมี GitHub account ก่อน จากนั้นคลิกที่ปุ่ม  เพื่อสร้าง repository ใหม่สำหรับเก็บไฟล์งานใน R project เมื่อสร้างเสร็จแล้วจะได้ repository ดังรูป"
+  },
+  {
+    "objectID": "posts/2023-01-06-github/index.html#สราง-project-ทเชอมตอกบ-github-ใน-rstudio",
+    "href": "posts/2023-01-06-github/index.html#สราง-project-ทเชอมตอกบ-github-ใน-rstudio",
+    "title": "What’s GitHub?",
+    "section": "2. สร้าง project ที่เชื่อมต่อกับ GitHub ใน Rstudio",
+    "text": "2. สร้าง project ที่เชื่อมต่อกับ GitHub ใน Rstudio\nกรณีนี้อาจจำแนกเป็น 2 กรณี กรณีแรกคือสร้าง project ใหม่ตั้งแต่ต้น และกรณีที่สองคือเชื่อมต่อ project เดิมที่มีอยู่ในเครื่องคอมพิวเตอร์แล้ว รายละเอียดมีดังนี้\n\nกรณี 1 : สร้าง project ใหม่ตั้งแต่ต้น"
+  },
+  {
     "objectID": "posts/2023-01-04-thaipdfrmarkdown/index.html#ตดตง-package-thaipdf",
     "href": "posts/2023-01-04-thaipdfrmarkdown/index.html#ตดตง-package-thaipdf",
     "title": "สร้าง pdf document ภาษาไทยบน rmarkdown ด้วย thaipdf package",
@@ -81,7 +95,7 @@
     "href": "index.html",
     "title": "Educational Data Science",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nJan 4, 2023\n\n\nWhat’s GitHub?\n\n\nสิวะโชติ ศรีสุทธิยากร\n\n\n\n\nJan 4, 2023\n\n\nสร้าง pdf document ภาษาไทยบน rmarkdown ด้วย thaipdf package\n\n\nสิวะโชติ ศรีสุทธิยากร\n\n\n\n\nJan 3, 2023\n\n\nWhat’s Machine Learning?\n\n\nสิวะโชติ ศรีสุทธิยากร\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nJan 6, 2023\n\n\nWhat’s GitHub?\n\n\nสิวะโชติ ศรีสุทธิยากร\n\n\n\n\nJan 4, 2023\n\n\nสร้าง pdf document ภาษาไทยบน rmarkdown ด้วย thaipdf package\n\n\nสิวะโชติ ศรีสุทธิยากร\n\n\n\n\nJan 3, 2023\n\n\nWhat’s Machine Learning?\n\n\nสิวะโชติ ศรีสุทธิยากร\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
