@@ -3,7 +3,7 @@ title: "Educational Data Science"
 listing:
   contents: posts
   sort: "date desc"
-  type: table
+  type: grid
   categories: true
   sort-ui: true
   filter-ui: true

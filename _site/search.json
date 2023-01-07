@@ -53,7 +53,7 @@
     "href": "posts/2023-01-06-github/index.html#สราง-project-ทเชอมตอกบ-github-ใน-rstudio",
     "title": "What’s GitHub?",
     "section": "2. สร้าง project ที่เชื่อมต่อกับ GitHub ใน Rstudio",
-    "text": "2. สร้าง project ที่เชื่อมต่อกับ GitHub ใน Rstudio\nกรณีนี้อาจจำแนกเป็น 2 กรณี กรณีแรกคือสร้าง project ใหม่ตั้งแต่ต้น และกรณีที่สองคือเชื่อมต่อ project เดิมที่มีอยู่ในเครื่องคอมพิวเตอร์แล้ว รายละเอียดมีดังนี้\n\nกรณี 1 : สร้าง project ใหม่ตั้งแต่ต้น"
+    "text": "2. สร้าง project ที่เชื่อมต่อกับ GitHub ใน Rstudio\nกรณีนี้อาจจำแนกเป็น 2 กรณี กรณีแรกคือสร้าง project ใหม่ตั้งแต่ต้น และกรณีที่สองคือเชื่อมต่อ project เดิมที่มีอยู่ในเครื่องคอมพิวเตอร์แล้ว รายละเอียดมีดังนี้\n\nกรณี 1 : สร้าง project ใหม่ตั้งแต่ต้น\n\nเลือก New Project…\nในหน้าต่าง Create Project ให้เลือก Version Control\nเลือก Git เป็น version control ที่จะใช้ใน project\nในหน้าต่าง Clone Git Repositoty (ดังรูปด้านล่าง) ให้ใส่ URL ของ repository ที่ได้สร้างเอาไว้ก่อนหน้าในขั้นตอนที่ 1 กำหนดชื่อของ project และกำหนดที่เก็บไฟล์งานของ project บนเครื่องคอมพิวเตอร์ของเรา จากนั้นกด Create Project"
   },
   {
     "objectID": "posts/2023-01-04-thaipdfrmarkdown/index.html#ตดตง-package-thaipdf",
@@ -95,7 +95,7 @@
     "href": "index.html",
     "title": "Educational Data Science",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nJan 6, 2023\n\n\nWhat’s GitHub?\n\n\nสิวะโชติ ศรีสุทธิยากร\n\n\n\n\nJan 4, 2023\n\n\nสร้าง pdf document ภาษาไทยบน rmarkdown ด้วย thaipdf package\n\n\nสิวะโชติ ศรีสุทธิยากร\n\n\n\n\nJan 3, 2023\n\n\nWhat’s Machine Learning?\n\n\nสิวะโชติ ศรีสุทธิยากร\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nWhat’s GitHub?\n\n\n\nGitHub\n\n\n\n\n\n\n\nสิวะโชติ ศรีสุทธิยากร\n\n\nJan 6, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nสร้าง pdf document ภาษาไทยบน rmarkdown ด้วย thaipdf package\n\n\n\nR markdown\n\n\nR\n\n\n\n\n\n\n\nสิวะโชติ ศรีสุทธิยากร\n\n\nJan 4, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat’s Machine Learning?\n\n\n\nmachine learning\n\n\nconcept\n\n\n\n\n\n\n\nสิวะโชติ ศรีสุทธิยากร\n\n\nJan 3, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",

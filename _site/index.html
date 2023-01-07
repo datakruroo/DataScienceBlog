@@ -71,9 +71,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -174,21 +174,21 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="listing-actions-group">
    <div class="input-group input-group-sm quarto-listing-sort">
      <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
      <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
        <option value="" disabled="" selected="" hidden="">Order By</option>
        <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title" data-direction="asc">
+          Title
+        </option>
          <option value="listing-date-sort" data-direction="asc">
           Date - Oldest
         </option>
          <option value="listing-date-sort" data-direction="desc">
           Date - Newest
-        </option>
-         <option value="listing-title-sort" data-direction="asc">
-          Title
         </option>
          <option value="listing-author" data-direction="asc">
           Author
@@ -200,58 +200,104 @@ ul.task-list li input[type="checkbox"] {
       <input type="text" class="search form-control" placeholder="Filter">
     </div>
 </div>
-
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
-</th>
-<th>
-<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
-</th>
-<th>
-<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-categories="GitHub" data-listing-date-sort="1672938000000" data-listing-file-modified-sort="1673079616682" data-listing-reading-time-sort="3.145" data-listing-title-sort="What's GitHub?" data-listing-filename-sort="index.qmd">
-<td class="listing-date">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="GitHub" data-listing-date-sort="1672938000000" data-listing-file-modified-sort="1673083515394" data-listing-reading-time-sort="3.36">
+<a href="./posts/2023-01-06-github/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/2023-01-06-github/images/image-852484314.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+What’s GitHub?
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('GitHub'); return false;">
+GitHub
+</div>
+</div>
+<div class="card-text listing-description">
+GitHub เป็นบริการประเภท cloud-based hosting มีวัตถุประสงค์หลัก ๆ คือให้ผู้ใช้เก็บบันทึกและติดตามการดำเนินงาน/โปรเจคต่าง ๆ (เรียกว่า version…
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+สิวะโชติ ศรีสุทธิยากร
+</div>
+<div class="listing-date">
 Jan 6, 2023
-</td>
-<td class="listing-title">
-<a href="./posts/2023-01-06-github/index.html" class="title">What’s GitHub?</a>
-</td>
-<td class="listing-author">
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="R markdown,R" data-listing-date-sort="1672765200000" data-listing-file-modified-sort="1673023584303" data-listing-reading-time-sort="2.445">
+<a href="./posts/2023-01-04-thaipdfrmarkdown/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="https://lightbridge-ks.github.io/thaipdf/logo.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+สร้าง pdf document ภาษาไทยบน rmarkdown ด้วย thaipdf package
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('R markdown'); return false;">
+R markdown
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+</div>
+<div class="card-text listing-description">
+ที่ผ่านมาการสร้างเอกสาร pdf ด้วย rmarkdown…
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
 สิวะโชติ ศรีสุทธิยากร
-</td>
-</tr>
-<tr data-index="1" data-categories="R markdown,R" data-listing-date-sort="1672765200000" data-listing-file-modified-sort="1673023584303" data-listing-reading-time-sort="2.445" data-listing-title-sort="สร้าง pdf document ภาษาไทยบน rmarkdown ด้วย thaipdf package" data-listing-filename-sort="index.qmd">
-<td class="listing-date">
+</div>
+<div class="listing-date">
 Jan 4, 2023
-</td>
-<td class="listing-title">
-<a href="./posts/2023-01-04-thaipdfrmarkdown/index.html" class="title">สร้าง pdf document ภาษาไทยบน rmarkdown ด้วย thaipdf package</a>
-</td>
-<td class="listing-author">
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="machine learning,concept" data-listing-date-sort="1672678800000" data-listing-file-modified-sort="1673023574285" data-listing-reading-time-sort="1.14">
+<a href="./posts/2023-01-03-ML-WhatIsML.qmd/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/2023-01-03-ML-WhatIsML.qmd/image.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+What’s Machine Learning?
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('machine learning'); return false;">
+machine learning
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('concept'); return false;">
+concept
+</div>
+</div>
+<div class="card-text listing-description">
+บทความนี้จะกล่าวถึงมโนทัศน์เบื้องต้นของการเรียนรู้ของเครื่อง (machine learning: ML) รายละเอียดมีดังนี้
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
 สิวะโชติ ศรีสุทธิยากร
-</td>
-</tr>
-<tr data-index="2" data-categories="machine learning,concept" data-listing-date-sort="1672678800000" data-listing-file-modified-sort="1673023574285" data-listing-reading-time-sort="1.14" data-listing-title-sort="What's Machine Learning?" data-listing-filename-sort="index.qmd">
-<td class="listing-date">
+</div>
+<div class="listing-date">
 Jan 3, 2023
-</td>
-<td class="listing-title">
-<a href="./posts/2023-01-03-ML-WhatIsML.qmd/index.html" class="title">What’s Machine Learning?</a>
-</td>
-<td class="listing-author">
-สิวะโชติ ศรีสุทธิยากร
-</td>
-</tr>
-</tbody>
-
-</table>
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
 <div class="listing-no-matching d-none">
 No matching items
 </div>
