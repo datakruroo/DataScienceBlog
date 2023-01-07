@@ -161,11 +161,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#การใชงาน-github-รวมกบ-rstudio" id="toc-การใชงาน-github-รวมกบ-rstudio" class="nav-link" data-scroll-target="#การใชงาน-github-รวมกบ-rstudio">การใช้งาน GitHub ร่วมกับ RStudio</a>
   <ul class="collapse">
   <li><a href="#สราง-github-repository" id="toc-สราง-github-repository" class="nav-link" data-scroll-target="#สราง-github-repository">1. สร้าง GitHub repository</a></li>
-  <li><a href="#สราง-project-ทเชอมตอกบ-github-ใน-rstudio" id="toc-สราง-project-ทเชอมตอกบ-github-ใน-rstudio" class="nav-link" data-scroll-target="#สราง-project-ทเชอมตอกบ-github-ใน-rstudio">2. สร้าง project ที่เชื่อมต่อกับ GitHub ใน Rstudio</a>
-  <ul class="collapse">
-  <li><a href="#กรณ-1-สราง-project-ใหมตงแตตน" id="toc-กรณ-1-สราง-project-ใหมตงแตตน" class="nav-link" data-scroll-target="#กรณ-1-สราง-project-ใหมตงแตตน">กรณี 1 : สร้าง project ใหม่ตั้งแต่ต้น</a></li>
+  <li><a href="#สราง-project-ทเชอมตอกบ-github-ใน-rstudio" id="toc-สราง-project-ทเชอมตอกบ-github-ใน-rstudio" class="nav-link" data-scroll-target="#สราง-project-ทเชอมตอกบ-github-ใน-rstudio">2. สร้าง project ที่เชื่อมต่อกับ GitHub ใน Rstudio</a></li>
+  <li><a href="#การสราง-access-token-สำหรบ-github" id="toc-การสราง-access-token-สำหรบ-github" class="nav-link" data-scroll-target="#การสราง-access-token-สำหรบ-github">3. การสร้าง access token สำหรับ GitHub</a></li>
   </ul></li>
-  </ul></li>
+  <li><a href="#การใชงานขนสง" id="toc-การใชงานขนสง" class="nav-link" data-scroll-target="#การใชงานขนสง">การใช้งานขั้นสูง</a></li>
   </ul>
 </nav>
     </div>
@@ -244,20 +243,37 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="สราง-project-ทเชอมตอกบ-github-ใน-rstudio" class="level2">
 <h2 class="anchored" data-anchor-id="สราง-project-ทเชอมตอกบ-github-ใน-rstudio">2. สร้าง project ที่เชื่อมต่อกับ GitHub ใน Rstudio</h2>
-<p>กรณีนี้อาจจำแนกเป็น 2 กรณี กรณีแรกคือสร้าง project ใหม่ตั้งแต่ต้น และกรณีที่สองคือเชื่อมต่อ project เดิมที่มีอยู่ในเครื่องคอมพิวเตอร์แล้ว รายละเอียดมีดังนี้</p>
-<section id="กรณ-1-สราง-project-ใหมตงแตตน" class="level3">
-<h3 class="anchored" data-anchor-id="กรณ-1-สราง-project-ใหมตงแตตน">กรณี 1 : สร้าง project ใหม่ตั้งแต่ต้น</h3>
 <ul>
 <li><p>เลือก <code>New Project…</code></p></li>
 <li><p>ในหน้าต่าง Create Project ให้เลือก <code>Version Control</code></p></li>
 <li><p>เลือก Git เป็น version control ที่จะใช้ใน project</p></li>
 <li><p>ในหน้าต่าง Clone Git Repositoty (ดังรูปด้านล่าง) ให้ใส่ URL ของ repository ที่ได้สร้างเอาไว้ก่อนหน้าในขั้นตอนที่ 1 กำหนดชื่อของ project และกำหนดที่เก็บไฟล์งานของ project บนเครื่องคอมพิวเตอร์ของเรา จากนั้นกด <code>Create Project</code></p></li>
 </ul>
-<p><img src="images/image-707029184.png" class="img-fluid" style="width:80.0%"></p>
-
-
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/image-707029184.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<ul>
+<li><p>ผลลัพธ์ที่ได้คือผู้ใช้จะมี R project ที่เชื่อมต่อกับ GitHub repository ที่ได้สร้างไว้ในขั้นตอนที่ 1 โดยหากสังเกตใน folder ของ R project จะพบว่ามี file ที่ถูกดาวน์โหลดจาก repositoty ลงมาใน R project ได้แก่ README.md นอกจากนี้ยังมีไฟล์ .gitgnore ที่ใช้บันทึกและติดตามการเปลี่ยนของไฟล์ภายใน project ผู้ใช้สามารถดำเนินการทำงานบน project นี้ได้ตามปกติ</p></li>
+<li><p>เมื่อผู้ใช้ทำงานเสร็จและต้องการที่จะบันทึก project ขึ้นไปบน GitHub repository ที่เชื่อมต่อไว้ตั้งแต่ตอนแรกให้กดที่ปุ่ม <img src="images/image-1383690285.png" class="img-fluid" style="width:4.0%"> ที่อยู่ด้านซ้ายบนของ Rstudio จากนั้นเลือก <code>Commit...</code>ซึ่งจะได้หน้าต่าง <code>Rstudio: Review Changes</code> ที่แสดงการเปลี่ยนแปลงของไฟล์ต่าง ๆ ภายใน project ผู้ใช้จะสังเกตเห็นว่ามีการแสดงเปรียบเทียบความแตกต่างระหว่างไฟล์ใน version เก่าและใหม่ที่ โดยจะมีการทำ highlight บริเวณ code ที่มีการเปลี่ยนแปลงเอาไว้ภายในแต่ละไฟล์ หากไม่ได้มีประเด็นอะไรให้ select all ไฟล์ทั้งหมดในหน้าต่าง แล้วกดติ้กเครื่องหมายถูกทั้งหมด</p></li>
+<li><p>ในหน้าต่าง <code>Commit message</code> ให้ผู้ใช้เขียนคำอธิบายของ version นี้สั้น ๆ จากนั้นกดปุ่ม <code>Commit</code></p></li>
+</ul>
+<p><img src="images/image-1634353082.png" class="img-fluid"></p>
+<ul>
+<li>กดปิดหน้าต่าง <code>Git Commit</code> และกดปุ่ม <code>Push</code> เพื่อ upload ไฟล์ทั้งหมดขึ้นไปเก็บไว้บน GitHub จากนั้นกดปิดหน้าต่าง <code>Git Push</code></li>
+</ul>
+</section>
+<section id="การสราง-access-token-สำหรบ-github" class="level2">
+<h2 class="anchored" data-anchor-id="การสราง-access-token-สำหรบ-github">3. การสร้าง access token สำหรับ GitHub</h2>
+<p>การที่จะ push ไฟล์ต่าง ๆ ของ project ขึ้นไปบน repository ของ GitHub ในปัจจุบันไม่สามารถใช้ usename และ password ของ GitHub ได้เหมือนสมัยก่อน แต่จะต้องใช้ usename คู่กับ personal access token ที่ต้อง generate จาก GitHub นโยบายนี้เริ่มใช้เมื่อประมาณเดือนสิงหาคม 2021 ด้วยเหตุผลด้านความปลอดภัยของผู้ใช้ token ดังกล่าวจะมีอายุการใช้งานตามที่ผู้ใช้กำหนด การ generate token สามารถดำเนินการเอกสารอ้างอิงนี้ <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic" class="uri">https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic</a></p>
 </section>
 </section>
+<section id="การใชงานขนสง" class="level1">
+<h1>การใช้งานขั้นสูง</h1>
+<p>ถึงแม้ Rstudio จะมี interface ที่ช่วยให้การทำงานร่วมกับ GitHub ทำได้ง่าย อย่างไรก็ตามปัจุบัน interface ดังกล่าวยังไม่สามารถใช้งานได้เต็มประสิทธิภาพของ GitHub สำหรับผู้ใช้งานขั้นสูงจำเป็นที่จะต้องเขียนคำสั่ง git บนหน้าต่าง terminal</p>
+
+
 </section>
 
 </main> <!-- /main -->
