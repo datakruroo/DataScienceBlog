@@ -1,14 +1,17 @@
 ---
-title: "Introduction to tidymodels (part I)"
-author: "สิวะโชติ ศรีสุทธิยากร"
-date: "2023-01-06"
-categories: [machine learning, R, tidymodels]
-toc: true
-code-fold: false
-code-line-numbers: true
-code-tools: 
-  source: true
+title: "R Markdown ภาษาไทย"
+author: "`thaipdf` package"
+date: "`r format(Sys.Date(), '%d/%m/%Y')`"
+draft: true
+output: 
+  thaipdf::thaipdf_document:
+    thai_font: "TH Sarabun New"
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
 
 ![](images/image-670677648.png){width="20%"}
 
@@ -184,7 +187,7 @@ p4<-test_str%>%ggplot()+
 grid.arrange(total, p1 , p2, p3, p4 , layout_matrix=rbind(c(1,1),c(2,3),c(4,5)))
 ```
 
-# Linear Regression Model
+# Linear Regression with tidymodels
 
 หัวข้อนี้จะแสดงการพัฒนาโมเดลทำนายด้วยอัลกอริทึม linear regression โดยใช้ [Tidymodels] ที่ได้กล่าวไปในข้างต้น การ train ให้อัลกอริทึม linear regression สามารถเรียนรู้ความสัมพันธ์ระหว่างตัวแปรตาม `hyw` กับตัวแปรทำนายต่าง ๆ ในชุดข้อมูลจะดำเนินงานด้วย package parsnip และการประเมินประสิทธิภาพในการทำนายของโมเดลที่พัฒนาขึ้นจะใช้ evaluation metric ที่อยู่ภายใต้ package-yardstick
 
@@ -247,7 +250,7 @@ p<-plot_ly(z=sse_grid, type="surface", x=beta0, y=beta1)%>%
 p
 ```
 
-# fitting linear regression ด้วย `parsnip`
+# การ fit linear regression ด้วย `parsnip`
 
 คู่มือ package parsnip
 
@@ -326,64 +329,6 @@ hwy_pred
 ```
 
 ผลลัพธ์ที่ได้จากการทำนายจะเป็นตารางแบบ tibble ที่แต่ละ row คือค่าทำนายของหน่วยข้อมูลใน row เดียวกันกับใน `test_str`
-
-## 5. การประเมินความคลาดเคลื่อนในการทำนาย
-
-ความคลาดเคลื่อนในการทำนายเป็นความแตกต่างระหว่างค่าทำนายกับค่าจริงในชุดข้อมูลทดสอบ ดังนั้นเมื่อได้ค่าทำนายในข้นตอนที่ 4. มาแล้ว ผู้วิเคราะห์ส่วนใหญ่มักรวม column ของค่าทำนายดังกล่าว เข้าไปเป็น column หนึ่งภายใต้ชุดข้อมูลทดสอบ การดำเนินการดังกล่าวสามารถทำได้หลายวิธีการ ในตัวอย่างนี้จะใช้ฟังก์ชัน `bind_cols()` เข้ามาช่วย ดังนี้
-
-```{r}
-test_results <- test_str %>% 
-                  select(hwy, cty) %>%
-                    bind_cols(hwy_pred)
-
-test_results
-```
-
-ดังที่กล่าวไว้ใน framework ของ tidymodels ว่าการตรวจสอบหรือประเมินประสิทธิภาพของโมเดลทำนายนั้นสามารถทำได้โดยใช้ package yardstick ทุกฟังก์ชันของ package นี้มีอาร์กิวเมนท์สำคัญได้แก่ชุดข้อมูลที่ต้องมี column อย่างน้อย 2 column คือ column ค่าจริงของตัวแปรตาม และอีก column หนึ่งเป็นค่าทำนายของตัวแปรตามเดียวกัน
-
-### RMSE
-
-ฟังก์ชันที่อยู่ภายใต้ package yardstick เป็น metric หรือ เกณฑ์ที่มักใช้สำหรับประเมินประสิทธิภาพการทำนายของโมเดล หน้าที่ของผู้วิเคราะห์คือเลือกใช้ฟังก์ชันดังกล่าวให้เหมาะสมกับปัญหา สำหรับโมเดลทำนายแบบ regression เกณฑ์หนึ่งที่มักใช้เพื่อประเมินประสิทธิภาพของโมเดลคือ รากที่สองของค่าเฉลี่ยความคลาดเคลื่อนกำลังสอง (root mean squared error: RMSE) ซึ่งมีค่าเท่ากับ
-
-$$
-RMSE = \frac{\sum_{i=1}^n(y_i-\hat{y}_i)^2}{n}
-$$
-
-package yardstick มีฟังก์ชัน `rmse()` ซึ่งช่วยคำนวณค่า RMSE ตามสูตรข้างต้น ฟังก์ชันดังกล่าวมีอาร์กิวเมนท์ที่จำต้องระบุอีกสองตัวนอกเหนือจาก matrix ของ model result ได้แก่ `truth` คือ column ของค่าสังเกตจริง และ `estimate` คือ column ของค่าทำนายที่อยู่ใน model result ดังตัวอย่างต่อไปนี้
-
-```{r}
-test_results %>% 
-  rmse(truth = hwy, estimate = .pred)
-```
-
-ค่า RMSE = 1.942 แปลว่าการทำนาย hwy ของ linear regression model นี้จะมีความคลาดเคลื่อนไปจากค่าจริงโดยเฉลี่ย 1.942 หน่วย
-
-### R squared
-
-ค่า R squared (หรืออาจเรียกว่า coefficient of determination) เป็นอีก metric หนึ่งที่สามารถใช้ประเมินประสิทธิภาพในการทำนายของโมเดลได้ ค่า R squared มีค่าเท่ากับกำลังสองของสัมประสิทธิ์สหสัมพันธ์ระหว่างค่าจริงของตัวแปรตามกับค่าทำนาย ซึ่งมีความหมายในเชิงสถิติว่าเป็นสัดส่วนของความผันแปรที่ร่วมกันระหว่างค่าจริงกับค่าทำนายดังกล่าว
-
-ค่า R squared มีคุณสมบัติคือมีค่าอยู่ในช่วง \[0 , 1\] หากโมเดลสามารถทำนายค่าสังเกตของตัวแปรตามได้อย่างสมบูรณ์ค่า R squared จะมีค่าเท่ากับ 1.00 แต่หากโมเดลไม่สามารถทำนายค่าสังเกตของตัวแปรตามได้เลยค่า R squared จะมีค่าเท่ากับ 0.00 การคำนวณ R squared สามารถทำได้ด้วยฟังก์ชัน `rsq()` ซึ่งมีการใช้งานในรูปแบบเดียวกับฟังก์ชัน `rmse()` ดังนี้
-
-```{r}
-test_results %>% 
-  rsq(truth = hwy, estimate = .pred)
-```
-
-ผลลัพธ์ข้างต้นพบว่าค่า R squared ระหว่างค่าจริงกับค่าทำนายของ linear regression model มีค่าเท่ากับ .8871 ซึ่งหมายความว่าค่าจริงและค่าทำนายมีความผันแปรร่วมกันถึง 88.71% ซึ่งอยู่ในระดับสูง
-
-### R squared plots
-
-R squared plots เป็นแผนภาพการกระจายระหว่างค่าจริง (แกน Y) กับค่าทำนาย (แกน X) แผนภาพดังกล่าวสามารถใช้คู่กับการอ่านผลจาก R squared ซึ่งช่วยให้ผู้วิเคราะห์ศึกษาได้ว่าการที่โมเดลมีประสิทธิภาพอยู่ในระดับต่ำ น่าจะเกิดจากสาเหตุใดบ้าง เช่น nonlinearity หรืออาจมีปัญหาอื่น ๆ การสร้าง R squared plot สามารถทำได้โดยใช้ package ggplot2 จากรูป R squared plot ด้านล่าง แนวโน้มของจุดบนแผนภาพคือแนวโน้มความสัมพันธ์หรือความสอดคล้องกันระหว่างค่าทำนายกับค่าจริง หากแนวโน้มดังกล่าวมีการกระจายที่ใกล้เคียงกับเส้นตรง y = x (คือเส้นอ้างอิงเมื่อ R squared = 1) นั้นแสดงว่าโมเดลทำนายที่พัฒนาขึ้นมีประสิทธิภาพในการทำนายสูง
-
-```{r fig.width=6, fig.height=4, message=F}
-library(ggplot2)
-test_results %>% 
-  ggplot(aes(x=.pred, y=hwy))+ #create 2D plane
-  geom_point()+ # create scatter plot
-  geom_abline(intercept=0, slope=1, linetype=3, col="steelblue")+ #create y=x line
-  coord_obs_pred()+ # special function from tune package
-  ggtitle("R squared plot")
-```
 
 เอกสารอ่านเพิ่มเติม
 
