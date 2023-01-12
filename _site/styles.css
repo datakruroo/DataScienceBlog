@@ -37,3 +37,10 @@ font-family: 'Noto Serif Thai';
 pre {
 font-family: 'Menlo';
 }
+
+ol{
+color: "#1A120B";
+font-family: 'Sarabun';
+font-size: 13pt;
+line-height: 1.7;
+}
